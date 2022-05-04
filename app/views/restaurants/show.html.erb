@@ -1,0 +1,13 @@
+<br><br><br><br>
+
+<h2><%= @restaurant.name %></h2>
+<p><%= @restaurant.address %></p>
+<p><%= @restaurant.phone_number %></p>
+<p><%= @restaurant.category %></p>
+<br><br>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %><br>Stars:<%= review.rating %></li>
+  <% end %>
+<%= link_to 'Atras', restaurants_path, class: "btn btn-primary"%> |
+<%= link_to 'Dejar opinion', new_restaurant_review_path(@restaurant), class: "btn btn-primary"%>
